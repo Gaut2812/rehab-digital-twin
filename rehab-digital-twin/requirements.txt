@@ -1,0 +1,19 @@
+# Phase 0 — Environment (computer vision / biomechanics MVP)
+opencv-python-headless>=4.9
+# Pinned: mediapipe>=0.10.14 dropped the legacy `mp.solutions.pose` API in
+# favor of the Tasks API, which requires downloading a separate .task model
+# file at runtime (not bundled in the wheel). 0.10.13 is the last release
+# with solutions.pose bundled and fully offline. Bump only if you migrate
+# pose_estimation.py to the Tasks API and vendor the model file yourself.
+mediapipe==0.10.13
+numpy>=1.26
+pandas>=2.2
+
+# Added in later phases (uncomment as you get there)
+# scikit-learn>=1.4        # Phase 5 — ML
+# torch>=2.2                # Phase 6 — Deep learning
+# opensim-python             # Phase 4 — musculoskeletal modeling (conda-only, see opensim/README.md)
+# fastapi>=0.110             # Phase 8 — backend
+# uvicorn[standard]>=0.29
+# psycopg2-binary>=2.9       # Phase 8 — PostgreSQL
+# sqlalchemy>=2.0
